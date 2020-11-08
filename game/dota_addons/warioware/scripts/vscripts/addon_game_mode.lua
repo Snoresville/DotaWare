@@ -1,5 +1,15 @@
+_G.DotaWare = DotaWare or class({})
+
 -- Require
+require("libraries/timers")
+
+-- Internal
+require("internal/globals")
+require("internal/util")
 require("internal/npc_first_spawn_event")
+
+-- Game Phases
+require("game_phases/phase01_player_load")
 
 require("internal/init")	-- Initialise after all variables have been settled
 

@@ -17,6 +17,8 @@ function InitialiseGamemode()
     gmE:SetGoldSoundDisabled(true)
     gmE:SetCameraDistanceOverride(1700)
     gmE:SetBuybackEnabled(false)
+    gmE:SetAnnouncerDisabled(true)
+    gmE:SetKillingSpreeAnnouncerDisabled(true)
 
     -- Other mechanics
     AddFOWViewer(DOTA_TEAM_GOODGUYS, Vector(0,0,0), math.sqrt(2048 * 2048 * 2), 999999, false)
@@ -37,7 +39,7 @@ ListenToGameEvent("npc_first_spawn", function(keys)
     local playerID = entity:GetPlayerOwnerID()
     if not entity:IsHero() then return end
 
-    print("Player " .. playerID .. " has entered the game.")
+    print("[DotaWare] Player " .. playerID .. " has spawned for the first time in game.")
 
     -- Sets color of player's name to a random color
     PlayerResource:SetCustomPlayerColor( playerID, math.random(256), math.random(256), math.random(256) )
@@ -45,4 +47,13 @@ ListenToGameEvent("npc_first_spawn", function(keys)
     -- Adds the base modifier
     entity:AddNewModifier(entity, nil, "player_base_modifier", {})
     entity:AddNewModifier(entity, nil, "player_still_loading", {})
+
+    -- Spawns them in a random spot within the lobby
+    Timers:CreateTimer(0.01, function ()
+		DotaWare:TeleportLobby(entity)
+	end)
+    
+
+    -- Try to turn off lingering dota music
+    entity:GetPlayerOwner():SetMusicStatus(DOTA_MUSIC_STATUS_NONE, 999)
 end, nil)
