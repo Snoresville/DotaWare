@@ -1,8 +1,11 @@
 -- Require
-require("internal/init")
+require("internal/npc_first_spawn_event")
+
+require("internal/init")	-- Initialise after all variables have been settled
 
 -- Initialise Game Mode
 function Precache( context )
+	PrecacheResource("soundfile", "soundevents/custom_sounds.vsndevts", context)
 	--[[
 		Precache things we know we'll use.  Possible file types include (but not limited to):
 			PrecacheResource( "model", "*.vmdl", context )

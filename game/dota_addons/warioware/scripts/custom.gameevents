@@ -1,0 +1,7 @@
+"CustomEvents"
+{
+	"npc_first_spawn"
+	{
+		"entindex"		"short"
+	}
+}

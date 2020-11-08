@@ -1,14 +1,11 @@
 <root>
     <scripts>
-        <include src="file://{resources}/scripts/custom_game/init.js" />
         <include src="file://{resources}/scripts/custom_game/util.js" />
+        <include src="file://{resources}/scripts/custom_game/init.js" />
     </scripts>
 
     <script>
-        FindDotaHudElement("inventory_neutral_slot_container").style.visibility = "collapse";
-        FindDotaHudElement("inventory_tpscroll_container").style.visibility = "collapse";
-	    FindDotaHudElement('StatBranch').style.visibility = "collapse";
-        FindDotaHudElement('level_stats_frame').style.visibility = "collapse";
+        
     </script>
 
     <Panel>

@@ -20,6 +20,12 @@ function RemoveHud(){
     GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_MENU_BUTTONS, false );     	//Top-left menu buttons in the HUD.
     //GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false );      			//Endgame scoreboard.    
     GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_BAR_BACKGROUND, false );     	//Background for hero icons at the top of the HUD.
+
+    // Finds and collapses elements
+    FindDotaHudElement("inventory_neutral_slot_container").style.visibility = "collapse";
+    FindDotaHudElement("inventory_tpscroll_container").style.visibility = "collapse";
+    FindDotaHudElement('StatBranch').style.visibility = "collapse";
+    FindDotaHudElement('level_stats_frame').style.visibility = "collapse";
 }
 
 RemoveHud();
