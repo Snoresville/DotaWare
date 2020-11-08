@@ -1,0 +1,9 @@
+<root>
+    <styles>
+		<include src="file://{resources}/styles/custom_game/scoreboard.css" />
+	</styles>
+
+    <Panel class = "scoreboard">
+        <DOTAAvatarImage steamid="local" id = "avatar"/>
+    </Panel>
+</root>
