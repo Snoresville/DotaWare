@@ -1,3 +1,14 @@
 <root>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/init.js" />
+        <include src="file://{resources}/scripts/custom_game/util.js" />
+    </scripts>
+
+    <script>
+        $.Msg("test")
+    </script>
+
+    <Panel>
     
+	</Panel>
 </root>

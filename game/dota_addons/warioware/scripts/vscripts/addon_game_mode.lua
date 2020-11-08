@@ -1,5 +1,5 @@
 -- Require
-require("internal/init.lua")
+require("internal/init")
 
 -- Initialise Game Mode
 function Precache( context )
