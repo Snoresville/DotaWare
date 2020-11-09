@@ -1,14 +1,76 @@
-.scoreboard
+#ScoreboardBase
 {
-    width: 200px;
-    height: 200px;
-    background-color: blue;
-    vertical-align: middle;
+    /*margin-top: 70px;*/
+    margin-left: 70px;
+
+    width: 400px;
+    vertical-align: top;
+    flow-children: up;
+    
 }
 
-#avatar
+.ScoreboardTitleText
 {
-    width: 100px;
-    height: 200px;
+    font-size: 36px;
+    color: #dddddd;
+    horizontal-align: center;
+}
 
+.ScoreboardTitleBackground
+{
+    background-color: black;
+    border: 2px solid #dddddd;
+
+    width: fill-parent-flow(1);
+}
+
+#ScoreboardPlayerList
+{
+    flow-children: down;
+    width: 400px;
+}
+.ScoreboardPlayerContainer
+{
+    flow-children: right;
+}
+.ScoreboardPlayerIcon
+{
+    width: 50px;
+    height: 50px;
+    border: 2px solid #dddddd;
+}
+.ScoreboardAvatar
+{
+    width: fill-parent-flow(1);
+    height: fill-parent-flow(1);
+}
+.ScoreboardUsernameContainer
+{
+    height: 50px;
+    width: 270px;
+    background-color: black;
+    border: 2px solid #dddddd;
+}
+.ScoreboardUsername
+{
+    font-size: 20px;
+    color: #dddddd;
+    
+    vertical-align: center;
+    horizontal-align: center;
+}
+.ScoreboardPlayerScoreContainer
+{
+    width: fill-parent-flow(1);
+    height: 50px;
+    background-color: black;
+    border: 2px solid #dddddd;
+}
+#PlayerScore
+{
+    font-size: 20px;
+    color: #dddddd;
+
+    vertical-align: center;
+    horizontal-align: center;
 }

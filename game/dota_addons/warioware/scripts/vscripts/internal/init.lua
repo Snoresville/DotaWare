@@ -1,4 +1,5 @@
 function InitialiseGamemode()
+    math.randomseed(os.time())
     local gmE = GameRules:GetGameModeEntity()
     
     -- Fixed settings for the gamemode
@@ -42,7 +43,7 @@ ListenToGameEvent("npc_first_spawn", function(keys)
     print("[DotaWare] Player " .. playerID .. " has spawned for the first time in game.")
 
     -- Sets color of player's name to a random color
-    PlayerResource:SetCustomPlayerColor( playerID, math.random(256), math.random(256), math.random(256) )
+    PlayerResource:SetCustomPlayerColor( playerID, DotaWare:TrueRandom(256) - 1, DotaWare:TrueRandom(256) - 1, DotaWare:TrueRandom(256) - 1)
 
     -- Adds the base modifier
     entity:AddNewModifier(entity, nil, "player_base_modifier", {})
@@ -55,5 +56,5 @@ ListenToGameEvent("npc_first_spawn", function(keys)
     
 
     -- Try to turn off lingering dota music
-    entity:GetPlayerOwner():SetMusicStatus(DOTA_MUSIC_STATUS_NONE, 999)
+    entity:GetPlayerOwner():SetMusicStatus(DOTA_MUSIC_STATUS_NONE, 9999)
 end, nil)

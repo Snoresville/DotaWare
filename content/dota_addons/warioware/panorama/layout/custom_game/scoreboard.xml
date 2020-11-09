@@ -1,9 +1,55 @@
 <root>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/util.js" />
+        <include src="file://{resources}/scripts/custom_game/panel_animation.js" />
+        <include src="file://{resources}/scripts/custom_game/scoreboard.js" />
+    </scripts>
+    
     <styles>
 		<include src="file://{resources}/styles/custom_game/scoreboard.css" />
 	</styles>
 
-    <Panel class = "scoreboard">
-        <DOTAAvatarImage steamid="local" id = "avatar"/>
+    <Panel class = "ScoreboardBase">
+        <Panel id = "ScoreboardBase">
+            <Panel id = "ScoreboardPlayerList">
+                <Panel class = "ScoreboardPlayerContainer" id = "Player-1">
+                    <Panel class = "ScoreboardPlayerIcon">
+                        <DOTAAvatarImage steamid="local" class = "ScoreboardAvatar"/>
+                    </Panel>
+                    <Panel class = "ScoreboardUsernameContainer">
+                        <DOTAUserName steamid="local" class = "ScoreboardUsername"/>
+                    </Panel>
+                    <Panel class = "ScoreboardPlayerScoreContainer">
+                        <Label id = "PlayerScore" text = "0"/>
+                    </Panel>
+                </Panel>
+                <Panel class = "ScoreboardPlayerContainer" id = "Player-2">
+                    <Panel class = "ScoreboardPlayerIcon">
+                        <DOTAAvatarImage steamid="76561198110878775" class = "ScoreboardAvatar"/>
+                    </Panel>
+                    <Panel class = "ScoreboardUsernameContainer">
+                        <DOTAUserName steamid="76561198110878775" class = "ScoreboardUsername"/>
+                    </Panel>
+                    <Panel class = "ScoreboardPlayerScoreContainer">
+                        <Label id = "PlayerScore" text = "0"/>
+                    </Panel>
+                </Panel>
+                <Panel class = "ScoreboardPlayerContainer" id = "Player-3">
+                    <Panel class = "ScoreboardPlayerIcon">
+                        <DOTAAvatarImage steamid="76561198058271321" class = "ScoreboardAvatar"/>
+                    </Panel>
+                    <Panel class = "ScoreboardUsernameContainer">
+                        <DOTAUserName steamid="76561198058271321" class = "ScoreboardUsername"/>
+                    </Panel>
+                    <Panel class = "ScoreboardPlayerScoreContainer">
+                        <Label id = "PlayerScore" text = "0"/>
+                    </Panel>
+                </Panel>
+            </Panel>
+
+            <Panel class = "ScoreboardTitleBackground" id = "ScoreboardTitle" onactivate = "ScoreboardToggleVisibilty()" onmouseover = "ScoreboardTitleHover()" onmouseout = "ScoreboardTitleUnhover()">
+                <Label class = "ScoreboardTitleText" text = "Scoreboard"/>
+            </Panel>
+        </Panel>
     </Panel>
 </root>

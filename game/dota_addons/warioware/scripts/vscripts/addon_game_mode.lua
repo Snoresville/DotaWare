@@ -8,6 +8,10 @@ require("internal/globals")
 require("internal/util")
 require("internal/npc_first_spawn_event")
 
+if IsInToolsMode() then
+	require("internal/debug")
+end
+
 -- Game Phases
 require("game_phases/phase01_player_load")
 
