@@ -4,14 +4,36 @@
         <include src="file://{resources}/scripts/custom_game/panel_animation.js" />
         <include src="file://{resources}/scripts/custom_game/scoreboard.js" />
     </scripts>
+
+    <script>
+        
+    </script>
     
     <styles>
 		<include src="file://{resources}/styles/custom_game/scoreboard.css" />
 	</styles>
 
+    <snippets>
+		<snippet name = "NewPlayer">
+			<Panel class = "ScoreboardPlayerContainer">
+                <Panel class = "ScoreboardPlayerIcon">
+                    <DOTAAvatarImage steamid="local" class = "ScoreboardAvatar" id = "PlayerAvatar"/>
+                </Panel>
+                <Panel class = "ScoreboardUsernameContainer">
+                    <DOTAUserName steamid="local" class = "ScoreboardUsername" id = "PlayerUsername"/>
+                </Panel>
+                <Panel class = "ScoreboardPlayerScoreContainer">
+                    <Label id = "PlayerScore" text = "0"/>
+                </Panel>
+            </Panel>
+		</snippet>
+	</snippets>
+
     <Panel class = "ScoreboardBase">
         <Panel id = "ScoreboardBase">
             <Panel id = "ScoreboardPlayerList">
+
+                <!-- Example Players
                 <Panel class = "ScoreboardPlayerContainer" id = "Player-1">
                     <Panel class = "ScoreboardPlayerIcon">
                         <DOTAAvatarImage steamid="local" class = "ScoreboardAvatar"/>
@@ -45,6 +67,7 @@
                         <Label id = "PlayerScore" text = "0"/>
                     </Panel>
                 </Panel>
+                -->
             </Panel>
 
             <Panel class = "ScoreboardTitleBackground" id = "ScoreboardTitle" onactivate = "ScoreboardToggleVisibilty()" onmouseover = "ScoreboardTitleHover()" onmouseout = "ScoreboardTitleUnhover()">

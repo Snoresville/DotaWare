@@ -1,5 +1,4 @@
 function InitialiseGamemode()
-    math.randomseed(os.time())
     local gmE = GameRules:GetGameModeEntity()
     
     -- Fixed settings for the gamemode
@@ -26,6 +25,7 @@ function InitialiseGamemode()
 
     -- More Initialisation
     InitialiseModifiers()
+    InitialiseRandom()
 end
 
 function InitialiseModifiers()
@@ -33,28 +33,15 @@ function InitialiseModifiers()
     LinkLuaModifier("player_still_loading", "modifiers/player_still_loading", LUA_MODIFIER_MOTION_NONE)
 end
 
--- Function that initialises the player at the first time their hero (Wisp) spawns.
-ListenToGameEvent("npc_first_spawn", function(keys)
-    local entindex = keys.entindex
-    local entity = EntIndexToHScript(entindex)
-    local playerID = entity:GetPlayerOwnerID()
-    if not entity:IsHero() then return end
+function InitialiseRandom()
+    print("[DotaWare] System time is: "..GetSystemTime())
 
-    print("[DotaWare] Player " .. playerID .. " has spawned for the first time in game.")
+    local newRandomSeed = math.random()
 
-    -- Sets color of player's name to a random color
-    PlayerResource:SetCustomPlayerColor( playerID, DotaWare:TrueRandom(256) - 1, DotaWare:TrueRandom(256) - 1, DotaWare:TrueRandom(256) - 1)
-
-    -- Adds the base modifier
-    entity:AddNewModifier(entity, nil, "player_base_modifier", {})
-    entity:AddNewModifier(entity, nil, "player_still_loading", {})
-
-    -- Spawns them in a random spot within the lobby
-    Timers:CreateTimer(0.01, function ()
-		DotaWare:TeleportLobby(entity)
-	end)
-    
-
-    -- Try to turn off lingering dota music
-    entity:GetPlayerOwner():SetMusicStatus(DOTA_MUSIC_STATUS_NONE, 9999)
-end, nil)
+    for i in string.gmatch(GetSystemTime(), "%d") do
+        newRandomSeed = newRandomSeed * (i + 1)
+        math.randomseed(newRandomSeed)
+        newRandomSeed = newRandomSeed + math.random()
+    end
+    --math.randomseed()
+end

@@ -22,3 +22,32 @@ end, nil)
 function DotaWare:Phase_PlayerLoad()
     EmitGlobalSound("DotaWare.Lobby_Loading")
 end
+
+-- Function that loads the player at the first time their hero (Wisp) spawns.
+ListenToGameEvent("npc_first_spawn", function(keys)
+    local entindex = keys.entindex
+    local entity = EntIndexToHScript(entindex)
+    local playerID = entity:GetPlayerOwnerID()
+    if not entity:IsHero() then return end
+
+    print("[DotaWare] Player " .. playerID .. " has spawned for the first time in game.")
+
+    -- Sets color of player's name to a random color
+    PlayerResource:SetCustomPlayerColor( playerID, math.random(256) - 1, math.random(256) - 1, math.random(256) - 1)
+
+    -- Adds the base modifier
+    entity:AddNewModifier(entity, nil, "player_base_modifier", {})
+    entity:AddNewModifier(entity, nil, "player_still_loading", {})
+
+    -- Spawns them in a random spot within the lobby
+    Timers:CreateTimer(0.01, function ()
+		DotaWare:TeleportLobby(entity)
+	end)
+    
+    -- Updates Scoreboard
+    local steamID = PlayerResource:GetSteamID(playerID)
+    CustomGameEventManager:Send_ServerToAllClients("scoreboard_add_player", {steamID = steamID, playerID = playerID})
+
+    -- Try to turn off lingering dota music
+    entity:GetPlayerOwner():SetMusicStatus(DOTA_MUSIC_STATUS_NONE, 9999)
+end, nil)
