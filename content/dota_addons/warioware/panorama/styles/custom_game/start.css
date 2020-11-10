@@ -1,0 +1,27 @@
+.Start
+{
+    width: 350px;
+    height: 90px;
+
+    vertical-align: bottom;
+    horizontal-align: center;
+    margin-bottom: 300px;
+}
+
+#StartButton
+{
+    width: 100%;
+    height: 100%;
+    
+    opacity: 0.3;
+    background-color: #3a3a3a;
+    border: 2px solid #d1d1d1;
+}
+
+#StartText
+{
+    vertical-align: middle;
+    horizontal-align: center;
+    font-size: 48px;
+    color: #ffffff;
+}

@@ -3,7 +3,7 @@
     /*margin-top: 70px;*/
     margin-left: 70px;
 
-    width: 400px;
+    width: 500px;
     vertical-align: top;
     flow-children: up;
     
@@ -18,20 +18,21 @@
 
 .ScoreboardTitleBackground
 {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     border: 2px solid #dddddd;
-
-    width: fill-parent-flow(1);
+    
+    /* width: 391px; */
+    width: 500px;
 }
 
 #ScoreboardPlayerList
 {
     flow-children: down;
-    width: 400px;
 }
 .ScoreboardPlayerContainer
 {
-    flow-children: right;
+    flow-children: left;
+    height: 50px;
 }
 .ScoreboardPlayerIcon
 {
@@ -48,7 +49,7 @@
 {
     height: 50px;
     width: 270px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.664);
     border: 2px solid #dddddd;
 }
 .ScoreboardUsername
@@ -61,9 +62,9 @@
 }
 .ScoreboardPlayerScoreContainer
 {
-    width: fill-parent-flow(1);
+    width: 70px;
     height: 50px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.664);
     border: 2px solid #dddddd;
 }
 #PlayerScore
@@ -73,4 +74,17 @@
 
     vertical-align: center;
     horizontal-align: center;
+}
+#ScoreboardReadyContainer
+{
+    width: fill-parent-flow(1);
+    vertical-align: center;
+}
+#ScoreboardReady
+{
+    horizontal-align: center;
+    
+    font-size: 22px;
+    color: #ff0000;
+    text-shadow: 1px 1px 1px 3.0 #33333346;
 }

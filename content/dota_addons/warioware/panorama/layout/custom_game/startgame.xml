@@ -1,0 +1,16 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/start.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/util.js" />
+        <include src="file://{resources}/scripts/custom_game/panel_animation.js" />
+        <include src="file://{resources}/scripts/custom_game/startgame.js" />
+    </scripts>
+
+    <Panel class="Start">
+        <Panel id="StartButton" onmouseover = "StartButtonHover()" onmouseout = "StartButtonUnhover()" onactivate = "StartButtonActivate()">
+            <Label id = "StartText" text = "START"/>
+        </Panel>
+    </Panel>
+</root>

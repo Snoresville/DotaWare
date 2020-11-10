@@ -16,20 +16,23 @@
     <snippets>
 		<snippet name = "NewPlayer">
 			<Panel class = "ScoreboardPlayerContainer">
-                <Panel class = "ScoreboardPlayerIcon">
-                    <DOTAAvatarImage steamid="local" class = "ScoreboardAvatar" id = "PlayerAvatar"/>
+                <Panel id="ScoreboardReadyContainer">
+                    <Label text = "Not Ready" id = "ScoreboardReady"/>
+                </Panel>
+                <Panel class = "ScoreboardPlayerScoreContainer">
+                    <Label id = "PlayerScore" text = "0"/>
                 </Panel>
                 <Panel class = "ScoreboardUsernameContainer">
                     <DOTAUserName steamid="local" class = "ScoreboardUsername" id = "PlayerUsername"/>
                 </Panel>
-                <Panel class = "ScoreboardPlayerScoreContainer">
-                    <Label id = "PlayerScore" text = "0"/>
+                <Panel class = "ScoreboardPlayerIcon">
+                    <DOTAAvatarImage steamid="local" class = "ScoreboardAvatar" id = "PlayerAvatar"/>
                 </Panel>
             </Panel>
 		</snippet>
 	</snippets>
 
-    <Panel class = "ScoreboardBase">
+    <Panel class = "Scoreboard">
         <Panel id = "ScoreboardBase">
             <Panel id = "ScoreboardPlayerList">
 
@@ -74,5 +77,6 @@
                 <Label class = "ScoreboardTitleText" text = "Scoreboard"/>
             </Panel>
         </Panel>
+
     </Panel>
 </root>

@@ -51,3 +51,12 @@ ListenToGameEvent("npc_first_spawn", function(keys)
     -- Try to turn off lingering dota music
     entity:GetPlayerOwner():SetMusicStatus(DOTA_MUSIC_STATUS_NONE, 9999)
 end, nil)
+
+CustomGameEventManager:RegisterListener("game_started", function(data)
+    print("[DotaWare] Game is starting!")
+
+    EmitGlobalSound("HeroPicker.Selected");
+    StopGlobalSound("DotaWare.Lobby_Loading")
+
+
+end)

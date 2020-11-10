@@ -11,5 +11,6 @@
 
     <Panel>
         <CustomUIElement type="Hud"			layoutfile="file://{resources}/layout/custom_game/scoreboard.xml" />
+        <CustomUIElement type="Hud"			layoutfile="file://{resources}/layout/custom_game/startgame.xml" />
 	</Panel>
 </root>

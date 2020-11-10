@@ -1,4 +1,5 @@
 var DOTA_TEAM_SPECTATOR = 1;
+var IsHost = Game.GetLocalPlayerInfo().player_has_host_privileges;
 
 function GetHEXPlayerColor(playerId) {
 	var playerColor = Players.GetPlayerColor(playerId).toString(16);

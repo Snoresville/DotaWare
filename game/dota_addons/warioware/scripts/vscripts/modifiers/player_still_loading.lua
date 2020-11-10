@@ -18,6 +18,9 @@ function player_still_loading:OnDestroy()
 	ParticleManager:SetParticleControl(particle_aoe_fx, 0, self:GetParent():GetAbsOrigin())
 	ParticleManager:SetParticleControl(particle_aoe_fx, 1, Vector(400, 1, 1))
     ParticleManager:ReleaseParticleIndex(particle_aoe_fx)
+
+    -- Send to panorama ready data
+    CustomGameEventManager:Send_ServerToAllClients("scoreboard_ready_player", {playerID = self:GetParent():GetPlayerOwnerID()})
 end
 
 function player_still_loading:OnIntervalThink()
