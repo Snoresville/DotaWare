@@ -21,6 +21,8 @@ end, nil)
 
 function DotaWare:Phase_PlayerLoad()
     EmitGlobalSound("DotaWare.Lobby_Loading")
+    CustomGameEventManager:Send_ServerToAllClients("textengine_title", {text = "Welcome to DotaWare!", color = "white", duration = 300})
+    CustomGameEventManager:Send_ServerToAllClients("textengine_subtitle", {text = "Please wait for other players to load and move around...", color = "white", duration = 300})
 end
 
 -- Function that loads the player at the first time their hero (Wisp) spawns.

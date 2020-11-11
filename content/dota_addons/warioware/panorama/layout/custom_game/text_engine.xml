@@ -3,6 +3,7 @@
         <include src="file://{resources}/styles/custom_game/text_engine.css" />
     </styles>
     <scripts>
+        <include src="file://{resources}/scripts/custom_game/util.js" />
         <include src="file://{resources}/scripts/custom_game/panel_animation.js" />
         <include src="file://{resources}/scripts/custom_game/text_engine.js" />
     </scripts>
@@ -10,7 +11,10 @@
     <!--</snippets>-->
     <Panel class="TextEngine">
         <Panel class="TextEngineTitleContainer">
-            <Label id = "TextEngineTitle" text = "Sample Text"/>
+            <Label id = "TextEngineTitle" text = "Title Text"/>
+        </Panel>
+        <Panel class="TextEngineSubtitleContainer">
+            <Label id = "TextEngineSubtitle" text = "Subtitle Text"/>
         </Panel>
     </Panel>
 </root>
