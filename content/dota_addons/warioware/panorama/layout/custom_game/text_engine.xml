@@ -1,0 +1,16 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/text_engine.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/panel_animation.js" />
+        <include src="file://{resources}/scripts/custom_game/text_engine.js" />
+    </scripts>
+    <!--<snippets>-->
+    <!--</snippets>-->
+    <Panel class="TextEngine">
+        <Panel class="TextEngineTitleContainer">
+            <Label id = "TextEngineTitle" text = "Sample Text"/>
+        </Panel>
+    </Panel>
+</root>

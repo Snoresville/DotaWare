@@ -10,3 +10,7 @@ function DotaWare:TeleportLobby(unit)
     unit:SetAbsOrigin(vRandomPoint)
     FindClearSpaceForUnit(unit, vRandomPoint, false)
 end
+
+function DotaWare:GetGameSpeed()
+    return GAME_SPEED
+end

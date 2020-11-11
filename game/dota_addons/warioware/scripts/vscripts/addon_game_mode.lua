@@ -14,6 +14,8 @@ end
 
 -- Game Phases
 require("game_phases/phase01_player_load")
+require("game_phases/phase02_pregame")
+require("game_phases/phase03_gameloop")
 
 require("internal/init")	-- Initialise after all variables have been settled
 

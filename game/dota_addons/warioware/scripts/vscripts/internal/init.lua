@@ -26,6 +26,7 @@ function InitialiseGamemode()
     -- More Initialisation
     InitialiseModifiers()
     InitialiseRandom()
+    InitialiseMode()
 end
 
 function InitialiseModifiers()
@@ -44,4 +45,9 @@ function InitialiseRandom()
         newRandomSeed = newRandomSeed + math.random()
     end
     --math.randomseed()
+end
+
+function InitialiseMode()
+    GAME_SPEED = 1;
+    GAME_ROUND = 0;
 end

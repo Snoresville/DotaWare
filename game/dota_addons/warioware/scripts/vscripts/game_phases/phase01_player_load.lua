@@ -38,11 +38,6 @@ ListenToGameEvent("npc_first_spawn", function(keys)
     -- Adds the base modifier
     entity:AddNewModifier(entity, nil, "player_base_modifier", {})
     entity:AddNewModifier(entity, nil, "player_still_loading", {})
-
-    -- Spawns them in a random spot within the lobby
-    Timers:CreateTimer(0.01, function ()
-		DotaWare:TeleportLobby(entity)
-	end)
     
     -- Updates Scoreboard
     local steamID = PlayerResource:GetSteamID(playerID)
@@ -58,5 +53,5 @@ CustomGameEventManager:RegisterListener("game_started", function(data)
     EmitGlobalSound("HeroPicker.Selected");
     StopGlobalSound("DotaWare.Lobby_Loading")
 
-
+    DotaWare:Phase_Pregame()
 end)
