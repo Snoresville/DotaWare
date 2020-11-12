@@ -20,6 +20,7 @@
     vertical-align: center;
     horizontal-align: center;
     font-size: 84px;
+    opacity: 0;
 }
 
 .TextEngineSubtitleContainer
@@ -38,4 +39,5 @@
     vertical-align: center;
     horizontal-align: center;
     font-size: 44px;
+    opacity: 0;
 }

@@ -14,3 +14,7 @@ end
 function DotaWare:GetGameSpeed()
     return GAME_SPEED
 end
+
+function DotaWare:GetDurationMultiplier()
+    return 1 - (self:GetGameSpeed() - 1) / 8
+end

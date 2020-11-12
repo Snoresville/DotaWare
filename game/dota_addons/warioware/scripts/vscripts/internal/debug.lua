@@ -45,17 +45,23 @@ ListenToGameEvent("player_chat", function(kv)
         return
     end
 
-    -- Minigame Win
-    if string.find(message, "-minigamewin1") and not GameRules:IsGamePaused() then
-        EmitGlobalSound("DotaWare.MinigameWin_1")
+    -- Minigame Loss
+    if string.find(message, "-minigameloss1") and not GameRules:IsGamePaused() then
+        EmitGlobalSound("DotaWare.MinigameLoss_1")
         return
     end
-    if string.find(message, "-minigamewin2") and not GameRules:IsGamePaused() then
-        EmitGlobalSound("DotaWare.MinigameWin_2")
+    if string.find(message, "-minigameloss2") and not GameRules:IsGamePaused() then
+        EmitGlobalSound("DotaWare.MinigameLoss_2")
         return
     end
-    if string.find(message, "-minigamewin3") and not GameRules:IsGamePaused() then
-        EmitGlobalSound("DotaWare.MinigameWin_3")
+    if string.find(message, "-minigameloss3") and not GameRules:IsGamePaused() then
+        EmitGlobalSound("DotaWare.MinigameLoss_3")
+        return
+    end
+
+    -- Effects
+    if string.find(message, "-minigamepass") and not GameRules:IsGamePaused() then
+        HeroList:GetHero(0):AddNewModifier(HeroList:GetHero(0), nil, "player_minigame_pass_effect", {})
         return
     end
 end, nil)

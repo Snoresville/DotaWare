@@ -27,11 +27,14 @@ function InitialiseGamemode()
     InitialiseModifiers()
     InitialiseRandom()
     InitialiseMode()
+    InitialiseMinigames()
 end
 
 function InitialiseModifiers()
     LinkLuaModifier("player_base_modifier", "modifiers/player_base_modifier", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("player_still_loading", "modifiers/player_still_loading", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("player_minigame_pass", "modifiers/player_minigame_pass", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("player_minigame_pass_effect", "modifiers/player_minigame_pass_effect", LUA_MODIFIER_MOTION_NONE)
 end
 
 function InitialiseRandom()
@@ -50,4 +53,13 @@ end
 function InitialiseMode()
     GAME_SPEED = 1;
     GAME_ROUND = 0;
+end
+
+function InitialiseMinigames()
+    require("../minigames/minigame_mathquiz")
+    require("../minigames/minigame_colourword")
+
+    for minigameName, minigameFunction in pairs(MinigameList) do
+        table.insert(MinigameNames, minigameName)
+    end
 end
